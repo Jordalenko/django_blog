@@ -50,9 +50,9 @@ base.metadata.create_all(db)
 
 
 # Query 1 - select all records from the "Artist" table
-artists = session.query(Artist)
-for artist in artists:
-    print(artist.artist_id, artist.name, sep=" | ")
+# artists = session.query(Artist)
+# for artist in artists:
+#     print(artist.artist_id, artist.name, sep=" | ")
 
 # Query 2 - select only the "Name" column from the "Artist" table
 # artists = session.query(Artist)
@@ -60,8 +60,8 @@ for artist in artists:
 #     print(artist.name)
 
 # Query 3 - select only "Queen" from the "Artist" table
-# artist = session.query(Artist).filter_by(name="Queen").first()
-# print(artist.artist_id, artist.name, sep=" | ")
+artist = session.query(Artist).filter_by(name="Queen").first()
+print(artist.artist_id, artist.name, sep=" | ")
 
 # Query 4 - select only by "ArtistId" #51 from the "Artist" table
 # artist = session.query(Artist).filter_by(artist_id=51).first()
