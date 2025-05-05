@@ -16,12 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.http import HttpResponse
+# from django.http import HttpResponse  # Add this to define index view if needed
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the index.")
+# def index(request):
+#     return HttpResponse("Hello, world. You're at the index.")
 
 urlpatterns = [
-    path('', index, name='index'),
-    path('admin/', admin.site.urls),
+        # path('', index, name='index'),        # Main home page
+        path('admin/', admin.site.urls),
+        path('', include('blog.urls'), name='blog.urls'),
 ]
